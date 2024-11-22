@@ -122,3 +122,36 @@ class Vector:
     def prod_int(v1, v2):
         return v1.x * v2.x + v1.y * v2.y
 ```
+
+## Animations
+
+Vídeo Explicativo:
+
+### https://drive.google.com/file/d/1XQchM5BWZ4x3Xy1wkjC7uUisckUltm5-/view?usp=sharing
+
+Código apresentado no vídeo:
+
+```
+import pygame
+
+from systems.image_rendering import blit_rotate_center
+
+
+class CollisionAnimation:
+    def __init__(self, frames, position):
+        self.frames = frames
+        self.position = position
+        self.current_frame = 0
+        self.last_update = pygame.time.get_ticks()
+        self.frame_rate = 100  # milliseconds between frames
+
+    def update(self):
+        now = pygame.time.get_ticks()
+        if now - self.last_update > self.frame_rate:
+            if self.current_frame < len(self.frames) - 1:
+                self.current_frame += 1
+            self.last_update = now
+
+    def draw(self, surface):
+        blit_rotate_center(surface, self.frames[self.current_frame], (self.position.x, self.position.y), 0)
+```
