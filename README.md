@@ -65,3 +65,60 @@ Vídeo Explicativo:
 ```
 
 Essa função faz o objeto reaparecer do lado oposto da tela quando sai dos limites, simulando um espaço contínuo. Se o objeto ultrapassa as bordas (horizontal ou vertical), ele é reposicionado no lado oposto, considerando uma pequena margem de tolerância.
+
+## Dica 4: Vetores
+
+Vídeo Explicativo:
+
+### https://drive.google.com/file/d/1NGUUn5bh8cg7BxB7zV1p4X5dKoSEOz18/view?usp=sharing
+
+Código em Python:
+
+```
+import math
+
+class Vector:
+    def __init__(self, x:float, y:float):
+        self.x = x
+        self.y = y
+        
+    def __sub__(self, other):
+        return Vector(self.x - other.x, self.y - other.y)
+    
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def __mul__(self, scalar: float):
+        self.x = self.x * scalar
+        self.y = self.y * scalar
+            
+    def __div__(self, scalar: float):
+        self.x = self.x/scalar
+        self.y = self.y/scalar
+        
+    def __str__(self):
+        return "x: "+str(self.x)+" y: "+str(self.y)
+        
+    def length(self):
+        return math.sqrt(self.x**2 + self.y**2)
+    
+    def normalize(self):
+        length = self.length()
+        if length != 0:
+            self.x /= length
+            self.y /= length
+    
+    def set_module(self, mod: float):
+        self.__div__(self.module())
+        self * mod        
+    
+    def module(self):
+        return math.sqrt(Vector.prod_int(self, self))
+    
+    def dot(self, other):
+        return self.x * other.x + self.y * other.y
+    
+    @staticmethod
+    def prod_int(v1, v2):
+        return v1.x * v2.x + v1.y * v2.y
+```
