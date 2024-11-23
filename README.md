@@ -154,6 +154,9 @@ Vídeo Explicativo:
 
 ### https://drive.google.com/file/d/1XQchM5BWZ4x3Xy1wkjC7uUisckUltm5-/view?usp=sharing
 
+
+Animações são elementos fundamentais para trazer vida e dinamismo a um jogo. Elas tornam as interações mais envolventes e ajudam a criar feedback visual para o jogador. No caso do Dirty Motors, as animações foram usadas principalmente para efeitos visuais, como a explosão.
+
 Código apresentado no vídeo:
 
 ```
@@ -180,3 +183,6 @@ class CollisionAnimation:
     def draw(self, surface):
         blit_rotate_center(surface, self.frames[self.current_frame], (self.position.x, self.position.y), 0)
 ```
+
+O Código de Animação
+O exemplo fornecido descreve uma classe CollisionAnimation, usada para criar uma sequência animada para colisões ou explosões entre os carros.
