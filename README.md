@@ -148,7 +148,7 @@ class Vector:
 
 O código define uma classe Vector para representar vetores 2D e realizar operações comuns relacionadas a eles, como adição, subtração, multiplicação por escalar, normalização e cálculo de módulo (comprimento). Ele inclui métodos para operações básicas, como __add__ e __sub__, que permitem somar e subtrair vetores diretamente, e __mul__ e __div__, para escalar o vetor por multiplicação ou divisão. Além disso, há métodos como length e module para calcular o tamanho do vetor, e normalize para ajustá-lo ao comprimento 1, preservando sua direção. A classe também suporta o cálculo do produto escalar (dot) e inclui uma função estática para calcular o produto interno entre dois vetores. Essa implementação é útil para aplicações como simulação de física ou jogos, onde manipulações de vetores são comuns.
 
-## Animations
+## Dica 5: Animations
 
 Vídeo Explicativo:
 
