@@ -38,7 +38,7 @@ v'A e v'B – velocidades dos corpos A e B após a colisão
             obj1.direction.normalize()
 
 
-A implementação prática está no arquivo collision.py do repositório do jogo, nas linhas 50 até a 64;
+Esse código, extraído do nosso jogo Dirty Motors, é um exemplo da implementação pratica em python da resolução da quantidade de movimento.
 
 ## Dica 2: Assets
 
@@ -93,7 +93,9 @@ Vídeo Explicativo:
 
 ### https://drive.google.com/file/d/1NGUUn5bh8cg7BxB7zV1p4X5dKoSEOz18/view?usp=sharing
 
-Código em Python:
+Para quem está um pouco perdido de por onde iniciar seu jogo, está naquela primeiro momento mais lento e confuso, que é o de definição de entidades, uma entidade importantissima de se considerar a implementação é a classe Vetor. No nosso jogo toda a física foi vetorizada, ou seja grandezas vetoriais como velocidade e posição foram consideradas um Vetor no nosso trabalho. Essa implementação permite uma maior liberdade no controle da física e uma implementação da física mais semelhante ao conceito físico teórico.
+
+A seguir esta o código em Python de uma classe Vetor genérica, a implementada no nosso jogo, note que não há nenhum vínculo com um jogo em si é apenas uma classe genérica que pode até ser reutilizada por quem estiver desenvolvendo em python também:
 
 ```
 import math
@@ -143,6 +145,8 @@ class Vector:
     def prod_int(v1, v2):
         return v1.x * v2.x + v1.y * v2.y
 ```
+
+O código define uma classe Vector para representar vetores 2D e realizar operações comuns relacionadas a eles, como adição, subtração, multiplicação por escalar, normalização e cálculo de módulo (comprimento). Ele inclui métodos para operações básicas, como __add__ e __sub__, que permitem somar e subtrair vetores diretamente, e __mul__ e __div__, para escalar o vetor por multiplicação ou divisão. Além disso, há métodos como length e module para calcular o tamanho do vetor, e normalize para ajustá-lo ao comprimento 1, preservando sua direção. A classe também suporta o cálculo do produto escalar (dot) e inclui uma função estática para calcular o produto interno entre dois vetores. Essa implementação é útil para aplicações como simulação de física ou jogos, onde manipulações de vetores são comuns.
 
 ## Animations
 
