@@ -157,7 +157,7 @@ Vídeo Explicativo:
 
 Animações são elementos fundamentais para trazer vida e dinamismo a um jogo. Elas tornam as interações mais envolventes e ajudam a criar feedback visual para o jogador. No caso do Dirty Motors, as animações foram usadas principalmente para efeitos visuais, como a explosão.
 
-Código apresentado no vídeo:
+A seguir está o código da classe CollisionAnimation que referencia as animações de colisão no jogo:
 
 ```
 import pygame
@@ -184,5 +184,4 @@ class CollisionAnimation:
         blit_rotate_center(surface, self.frames[self.current_frame], (self.position.x, self.position.y), 0)
 ```
 
-O Código de Animação
-O exemplo fornecido descreve uma classe CollisionAnimation, usada para criar uma sequência animada para colisões ou explosões entre os carros.
+A classe CollisionAnimation gerencia animações definindo uma lista de quadros (frames), a posição na tela, o índice do quadro atual (current_frame), e o tempo entre quadros (frame_rate). O método update avança os quadros de acordo com o tempo decorrido, enquanto draw renderiza o quadro atual na tela, centralizando a imagem com a função blit_rotate_center. Para otimizar, os quadros devem ser carregados apenas uma vez, e a organização das imagens facilita o gerenciamento. Ajustar o frame_rate permite controlar a velocidade da animação, e combiná-la com eventos de física, como colisões, cria feedback visual direto para o jogador.
