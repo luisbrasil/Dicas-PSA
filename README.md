@@ -10,6 +10,8 @@ Vídeo Explicativo:
 
 ### https://drive.google.com/file/d/1wZyB0PnZJd-YieUKnIUX-hbkGAor18Tt/view?usp=sharing
 
+Um conceito interessante que foi aplicado no jogo é de quantidade de movimento para resolver a colisão entre os carros:
+
 A conservação da quantidade de movimento é um dos mais importantes princípios da Física. De acordo com esse princípio, na ausência de forças dissipativas, a quantidade de movimento total de um sistema deve manter-se constante. Isso indica que, em situações em que ocorrem colisões, por exemplo, o produto da massa pela velocidade dos corpos deve ser igual antes e após o contato entre eles – nestes casos, dizemos que a colisão foi perfeitamente elástica.
 
 ![image](https://github.com/user-attachments/assets/1e85674d-35e9-4e1b-bb4f-577e114cf611)
@@ -44,6 +46,12 @@ Vídeo Explicativo:
 
 ### https://drive.google.com/file/d/1Ee-7UdvC8s4O-yWhg5JAVv0ZI_qBoavx/view?usp=sharing
 
+Uma das dificuldades do jogo é a criação dos sprites, onde obtê-los, etc. Um bom website que utilizamos na criação do Dirty Motors foi o itch.io, ele é um site de jogos indies onde qualquer um pode publicar seu jogo e receber apoio financeiro de quem se interessar pelo projeto. Mas além disso, para o nosso foco, no site os usuários disponibilizam diversos sprites, sendo eles 2D ou 3D, gratuitos ou pagos. É atualmente o site da internet com o maior acervo de sprites disponíveis para uso, uma parte interessante é a opção de filtrar pelo tema do sprite, por exemplo no caso do nosso jogo, pesquisamos pela tag Car, para encontrar sprites de carro.
+
+![image](https://github.com/user-attachments/assets/dfc33fe0-0c86-421a-a415-542813f0f68f)
+
+Essa imagem é um exemplo de pesquisa por sprites feita com os seguintes parâmetros: Free(Gratuito), 2D(duas dimensões) e Car(carro).
+
 Link do site: https://itch.io/game-assets
 
 ## Dica 3: Tela Infinita
@@ -51,6 +59,19 @@ Link do site: https://itch.io/game-assets
 Vídeo Explicativo:
 
 ### https://drive.google.com/file/d/1U4bEL4gybppjynSg-cPC_x1aHE0wZQly/view?usp=sharing
+
+A tela infinita, é o conceito onde um objeto ao sair da tela apareça no lado oposto dela, simulando um ambiente contínuo, um exemplo muito conhecido é o jogo da cobrinha, onde quando a cobrinha saia de um lado da tela seu corpo ia aparecendo no lado oposto, esse conceito é especialmente popular em jogos onde a mecânica de movimento e a exploração são centrais, já que elimina barreiras artificiais e incentiva o jogador a usar toda a tela como campo de jogo, assim como é o caso do nosso jogo.
+
+1. Aumentar a Imersão
+        Em jogos com temática espacial, como Asteroids, o espaço contínuo simula o efeito de um universo infinito, onde não há limites "visíveis". Isso torna o ambiente mais envolvente e realista.
+2. Facilitar a Navegação
+        Em um espaço contínuo, os jogadores não ficam "presos" em bordas da tela. Em vez disso, ao ultrapassá-las, retornam para o outro lado. Isso permite uma movimentação fluida, útil em jogos de combate ou exploração.
+3. Criação de Estratégias Únicas
+        Jogadores podem planejar estratégias que envolvem sair de uma borda da tela para surpreender inimigos ou escapar de situações perigosas, como em jogos de ação ou de combate.
+4. Manutenção de Objetos em Movimento
+        Para jogos com projéteis, veículos ou personagens rápidos, o espaço contínuo permite que esses objetos reapareçam e mantenham sua dinâmica sem precisar de restrições artificiais, como colisões invisíveis nas bordas.
+5. Simplicidade de Design
+        Do ponto de vista técnico, essa abordagem pode simplificar a lógica de certos elementos. Em vez de parar um objeto nas bordas, o jogo apenas reposiciona sua coordenada, reduzindo a complexidade de tratamento.
 
 ```
     def check_teleport(self):
@@ -64,7 +85,7 @@ Vídeo Explicativo:
             self.position.y = self.screen_height
 ```
 
-Essa função faz o objeto reaparecer do lado oposto da tela quando sai dos limites, simulando um espaço contínuo. Se o objeto ultrapassa as bordas (horizontal ou vertical), ele é reposicionado no lado oposto, considerando uma pequena margem de tolerância.
+Essa função é um exemplo em pyhton, que foi utilizado na nossa implementação, ela faz o objeto reaparecer do lado oposto da tela quando sai dos limites, simulando um espaço contínuo. Se o objeto ultrapassa as bordas (horizontal ou vertical), ele é reposicionado no lado oposto, considerando uma pequena margem de tolerância.
 
 ## Dica 4: Vetores
 
